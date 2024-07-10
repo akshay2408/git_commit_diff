@@ -25,23 +25,23 @@ To set up the project, follow these steps:
    rails server
 ## API Endpoints
 ### Get Commit Details:
-   `GET /repositories/:owner/:repository/commits/:oid`
+   `GET /repositories/:user/:repository/commits/:commit_sha`
 
    Fetches metadata about a specific commit.
 
 ### Get Commit Diff:
-   `GET /repositories/:owner/:repository/commits/:oid/diff`
+   `GET /repositories/:user/:repository/commits/:commit_sha/diff`
 
    Fetches the list of files in the commit, including the diff of each file.
 ### Test API Endpoints using curl request
 ```bash
-curl -X GET "http://localhost:3000/repositories/" \
+curl -X GET "http://localhost:3000/repositories/user_name/git_commit_diff/commit_id" \
 -H "Authorization: token YOUR_GITHUB_TOKEN" \
 -H "Content-Type: application/json"
 ```
 
 ```bash
-curl -X GET "http://localhost:3000/repositories/" \
+curl -X GET "http://localhost:3000/repositories/user_name/git_commit_diff/commit_id/diff" \
 -H "Authorization: token YOUR_GITHUB_TOKEN" \
 -H "Content-Type: application/json"
 ```
